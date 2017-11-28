@@ -7,9 +7,15 @@ namespace libfc
         //Write a function to return Sha1 hash for the contentes of the textfile
         public static string getMd5(String path)
         {
-            return "hash";
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                using (var stream = System.IO.File.OpenRead(path))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
         }
-
 
         //Write a function to return Sha1 hash for the contentes of the textfile
         public string GetSha1(String path)
