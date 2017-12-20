@@ -9,9 +9,10 @@ namespace libfilecheck
     {
         static void Main(string[] args)
         {
-           
-            Console.WriteLine(Hash.getMd5("test"));
 
+            Console.WriteLine(args[0]);
+            Console.WriteLine(Hash.getMd5(args[0]));
+            Console.WriteLine(Hash.getSha1(args[0]));
             Console.ReadKey();
         }
     }
