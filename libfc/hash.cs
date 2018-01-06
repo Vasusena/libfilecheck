@@ -30,6 +30,15 @@ namespace libfc
             }
                
         }
+		
+	// Function to fetch exact size of given file in bytes and return it
+
+	public string getSize(String path)
+	{
+		long size = path.length;
+		Console. Write("File Size in Bytes: ",size);
+	}
+	
 
         //Write a function to calculate md5 hash of the given file
 
